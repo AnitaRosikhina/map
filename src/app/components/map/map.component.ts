@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {MarkerService} from "../../shared/services/marker.service";
 import {IMarker} from "../../shared/model/marker";
 
@@ -8,6 +8,8 @@ import {IMarker} from "../../shared/model/marker";
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
+  @Output() highlightedItem = new EventEmitter()
+
   latitude: number = 51.678418
   longitude: number = 7.809007
   markers: IMarker[] | undefined
@@ -17,5 +19,10 @@ export class MapComponent implements OnInit {
 
   ngOnInit() {
     this.markers = this.markerService.getAll()
+  }
+
+  onChoseMarker(event) {
+    const highlightedItem = this.markers.find(el => el.longitude === event.longitude && el.latitude === event.latitude)
+    this.highlightedItem.emit(highlightedItem)
   }
 }

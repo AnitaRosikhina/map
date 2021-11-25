@@ -3,6 +3,7 @@
     *ngFor="let marker of markers"
     [latitude]="marker.latitude"
     [longitude]="marker.longitude"
+    (markerClick)="onChoseMarker($event)"
   >
   </agm-marker>
 </agm-map>
