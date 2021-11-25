@@ -1,0 +1,12 @@
+<div class="block_list">
+  <div class="block_list_title">
+    Объекты
+  </div>
+  <div>
+    <div *ngFor="let car of markers" class="block_list_item">
+      <img src="assets/image/car.png" alt="icon">
+      {{ car.name }}
+      <u *ngIf="car.id === highlightedItem?.id">highlighted</u>
+    </div>
+  </div>
+</div>
