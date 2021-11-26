@@ -4,7 +4,13 @@
     Объекты
   </div>
   <div>
-    <input type="text" [(ngModel)]="search" (ngModelChange)="onSearch.emit($event)">
+    <input
+      type="text"
+      class="search"
+      placeholder="Поиск"
+      [(ngModel)]="search"
+      (ngModelChange)="onSearch.emit($event)"
+    >
   </div>
   <div>
     <div
