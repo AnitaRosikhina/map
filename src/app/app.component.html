@@ -1,8 +1,10 @@
 <app-map
   [selectedMarker]="highlightedItem"
+  [search]="search"
   (highlightedItem)="highlightedItem = $event"
 ></app-map>
 <app-list
   [highlightedItem]="highlightedItem"
   (selectedMarker)="highlightedItem = $event"
+  (onSearch)="search = $event"
 ></app-list>

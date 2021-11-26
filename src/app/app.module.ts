@@ -6,19 +6,23 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {MapComponent} from './components/map/map.component';
 import {ListComponent} from './components/list/list.component';
+import { SearchPipe } from './components/list/pipes/search.pipe';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    ListComponent
+    ListComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAi1kuulGPzqFUNs4ijs-frgcpE1Wy9neo'
-    })
+    }),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,8 +12,10 @@ export class ListComponent implements OnInit {
   @Input() highlightedItem: IMarker
 
   @Output() selectedMarker = new EventEmitter<IMarker>()
+  @Output() onSearch = new EventEmitter<string>()
 
   markers: IMarker[] | undefined
+  search
 
   constructor(private markerService: MarkerService) { }
 

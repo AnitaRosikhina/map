@@ -4,8 +4,11 @@
     Объекты
   </div>
   <div>
+    <input type="text" [(ngModel)]="search" (ngModelChange)="onSearch.emit($event)">
+  </div>
+  <div>
     <div
-      *ngFor="let car of markers"
+      *ngFor="let car of markers | search:search"
       class="block_list_item"
       [ngClass]="{'chose_item': car.id === highlightedItem?.id}"
       (click)="onChoseItem(car)"

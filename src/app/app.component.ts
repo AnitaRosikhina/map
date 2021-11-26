@@ -9,4 +9,5 @@ import {IMarker} from "./shared/model/marker";
 })
 export class AppComponent {
   highlightedItem: IMarker
+  search: string;
 }

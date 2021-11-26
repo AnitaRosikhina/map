@@ -12,6 +12,9 @@ export class MapComponent implements OnInit {
   @Output() highlightedItem = new EventEmitter()
 
   @Input() selectedMarker: IMarker
+  @Input() set search(value: string) {
+    this.markers = this.markerService.getAll().filter(el => el.name.toLowerCase().includes(value?.toLowerCase()))
+  }
 
   latitude: number = 51.678418
   longitude: number = 7.809007
