@@ -1,2 +1,8 @@
-<app-map (highlightedItem)="highlightedItem = $event"></app-map>
-<app-list [highlightedItem]="highlightedItem"></app-list>
+<app-map
+  [selectedMarker]="highlightedItem"
+  (highlightedItem)="highlightedItem = $event"
+></app-map>
+<app-list
+  [highlightedItem]="highlightedItem"
+  (selectedMarker)="highlightedItem = $event"
+></app-list>

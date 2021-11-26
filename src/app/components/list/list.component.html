@@ -1,12 +1,17 @@
+<!-- todo implement search control and pipe-->
 <div class="block_list">
   <div class="block_list_title">
     Объекты
   </div>
   <div>
-    <div *ngFor="let car of markers" class="block_list_item">
+    <div
+      *ngFor="let car of markers"
+      class="block_list_item"
+      [ngClass]="{'chose_item': car.id === highlightedItem?.id}"
+      (click)="onChoseItem(car)"
+    >
       <img src="assets/image/car.png" alt="icon">
       {{ car.name }}
-      <u *ngIf="car.id === highlightedItem?.id">highlighted</u>
     </div>
   </div>
 </div>

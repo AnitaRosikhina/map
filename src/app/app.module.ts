@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AgmCoreModule } from '@agm/core'
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AgmCoreModule} from '@agm/core'
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MapComponent } from './components/map/map.component';
-import { ListComponent } from './components/list/list.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {MapComponent} from './components/map/map.component';
+import {ListComponent} from './components/list/list.component';
 
 @NgModule({
   declarations: [

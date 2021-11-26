@@ -5,5 +5,8 @@
     [longitude]="marker.longitude"
     (markerClick)="onChoseMarker($event)"
   >
+    <agm-info-window [isOpen]="marker.id === selectedMarker?.id">
+      <strong>The {{ marker.name}} is here</strong>
+    </agm-info-window>
   </agm-marker>
 </agm-map>
